@@ -16,7 +16,7 @@ public static class SpisokSlov
 {
     public static void Start()
     {
-        int a = 2;
+        var a = 2;
         string b = "m";
 
         string t = string.Format("{1} - {0:}", a, b);

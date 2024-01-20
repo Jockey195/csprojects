@@ -1,6 +1,8 @@
-﻿namespace ConsoleUtils
+﻿using System.Text;
+
+namespace ConsoleUtils
 {
-    public class InputService
+    public static class InputService
     {
         public static double? GetDouble()
         {
@@ -19,24 +21,27 @@
             return result;
         }
 
-        public static int? GetOption(string[] modeDescriptions)
+        public static char GetOption(string message, Dictionary<char, string> options)
         {
-            Console.WriteLine("Выберите режим: ");
 
-            foreach (var modeDescription in modeDescriptions)
+            Console.WriteLine(message);
+
+            foreach (var option in options)
             {
-                Console.WriteLine(modeDescription);
+                Console.WriteLine($"{option.Key} {option.Value}");
             }
 
             try
             {
-                // Пытаемся получить числовое значение
-                int? mode = Convert.ToInt32(Console.ReadLine());
+                ConsoleKeyInfo input = Console.ReadKey(true);
+                Console.Clear();
 
-                if (mode < 0 || mode > modeDescriptions.Length)
+                // Пытаемся получить числовое значение
+                char mode = input.KeyChar;
+                if (!options.ContainsKey(mode) && mode != '\r')
                 {
                     // Если ошибка, запускаем текущий метод, заново
-                    return GetOption(modeDescriptions);
+                    return GetOption(message, options);
                 }
 
                 // Если код дошел сюда, возвращаем значение выбранного режима
@@ -45,32 +50,15 @@
             catch (Exception)
             {
                 // Если ошибка, запускаем текущий метод, заново
-                return GetOption(modeDescriptions);
+                return GetOption(message, options);
             }
         }
 
-        public static int? GetInt()
+        public static string? GetString()
         {
-            int result;
-            string? input = Console.ReadLine();
-            bool parsResult = int.TryParse(input, out result);
-            if (!parsResult)
-            {
-                Console.WriteLine("Ошибка ввода");
-            }
-            return result;
-        }
-
-        public static DateTime? GetDate()
-        {
-            string? rawDate = Console.ReadLine();
-            DateTime date;
-            bool dateGood = DateTime.TryParse(rawDate, out date);
-            if (!dateGood)
-            {
-                Console.WriteLine("Ошибка ввода");
-            }
-            return date;
+            var input = Console.ReadLine();
+            Console.InputEncoding = Encoding.UTF8;
+            return string.IsNullOrWhiteSpace(input) ? null : input;
         }
     }
 }

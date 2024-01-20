@@ -1,10 +1,4 @@
 ﻿using ConsoleUtils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace movsar_part4
 {
     internal class CakesImprovement
@@ -14,14 +8,21 @@ namespace movsar_part4
             const string PATH = @"CakesPrice.txt";
 
             // Выбор режима
-            string[] modes = { "1 - Выбор торта", "2 - Внести в прайс новый торт" };
-            int? mode = InputService.GetOption(modes);
+            int? mode = InputService.GetOption(" ", new Dictionary<char, string>()
+            {
+                { '1', "Выбор торта" }, { '2', "Внести в прайс новый торт"}
+            });
 
             switch (mode)
             {
                 case 1:
                     Console.WriteLine("Введите название торта: ");
-                    string? selectedName = Console.ReadLine();
+                    string? selectedName = InputService.GetString();
+                    if (selectedName == null)
+                    {
+                        Console.WriteLine("Неверный ввод");
+                        return;
+                    }
 
                     string contents = File.ReadAllText(PATH);
                     string[] entries = contents.Split("\r\n");
@@ -51,10 +52,10 @@ namespace movsar_part4
                     Console.WriteLine("Введите данные о торте");
 
                     Console.Write("Название торта: ");
-                    string? date = Console.ReadLine();
+                    string? date = InputService.GetString();
 
                     Console.WriteLine("Цена торта: ");
-                    string? price = Console.ReadLine();
+                    string? price = InputService.GetString();
 
                     try
                     {
