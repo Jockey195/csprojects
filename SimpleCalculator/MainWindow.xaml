@@ -5,12 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimpleCalculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="57,26,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-    </Grid>
+        Title="MainWindow" Height="195" Width="140">
+    <StackPanel Orientation="Vertical">
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="111" Height="24"/>
+        <Label Content="Casio-526" HorizontalAlignment="Left" Margin="10,05,0,0" VerticalAlignment="Top" Width="110" Height="17" FontSize="6"/>
+        <Grid Margin="10">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" x:Name= "btnDivide" Content="/"/>
+            <Button Grid.Row="0" Grid.Column="1" x:Name= "btnMultiply" Content="*"/>
+            <Button Grid.Row="0" Grid.Column="2" x:Name= "btnMinus" Content="-"/>
+            
+            <Button Grid.Row="0" Grid.Column="3" Grid.RowSpan="3" x:Name= "btnPlus" Content="+"/>
+            
+            <Button Grid.Row="1" Grid.Column="0" x:Name= "btnSeven" Content="7"/>
+            <Button Grid.Row="1" Grid.Column="1" x:Name= "btnEight" Content="8"/>
+            <Button Grid.Row="1" Grid.Column="2" x:Name= "btnNine" Content="9"/>
+            
+            <Button Grid.Row="2" Grid.Column="0" x:Name= "btnFour" Content="4"/>
+            <Button Grid.Row="2" Grid.Column="1" x:Name= "btnFive" Content="5"/>
+            <Button Grid.Row="2" Grid.Column="2" x:Name= "btnSix" Content="6"/>
+            
+            <Button Grid.Row="3" Grid.Column="3" Grid.RowSpan="2" x:Name= "btnCalculate" Content="="/>
+            
+            <Button Grid.Row="3" Grid.Column="0" x:Name= "btnOne" Content="1"/>
+            <Button Grid.Row="3" Grid.Column="1" x:Name= "btnTwo" Content="2"/>
+            <Button Grid.Row="3" Grid.Column="2" x:Name= "btnThree" Content="3"/>
+            
+            <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" x:Name= "btnZero" Content="0"/>
+            <Button Grid.Row="4" Grid.Column="2" x:Name= "btnDot" Content="."/>
+        </Grid>
+    </StackPanel>
 </Window>
