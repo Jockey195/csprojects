@@ -1,5 +1,36 @@
 public class LogAnalyzer2
 {
+    public static string AnalyzeLog(string log)
+    {
+        // Дата
+        int dateStartIndex = 0;
+        int dateEndIndex = log.IndexOf(" ");
+        string date = log.Substring(dateStartIndex, dateEndIndex);
+
+        // Вычисляем индекс начала следующего значения
+        int offset = GetOffset(log, dateEndIndex);
+
+        // Время
+        int timeStartIndex = offset;
+        int timeEndIndex = log.IndexOf(" ", offset);
+        string time = log.Substring(timeStartIndex, timeEndIndex - timeStartIndex);
+
+        offset = GetOffset(log, timeEndIndex);
+
+        // Уровень            
+        int levelStartIndex = offset;
+        int levelEndIndex = log.IndexOf(" ", offset);
+        string level = log.Substring(levelStartIndex, levelEndIndex - levelStartIndex);
+
+        offset = GetOffset(log, levelEndIndex);
+
+        // Сообщение   
+        int messageStartIndex = offset;
+        string message = log.Substring(messageStartIndex);
+
+        return $"Дата: {date}, Время: {time}, Уровень: {(level + ",").PadRight(8)} Сообщение: {message}.";
+    }
+
     public static void Start()
     {
         string[] logs = {
@@ -12,33 +43,9 @@ public class LogAnalyzer2
 
         foreach (string log in logs)
         {
-            // Дата
-            int dateStartIndex = 0;
-            int dateEndIndex = log.IndexOf(" ");
-            string date = log.Substring(dateStartIndex, dateEndIndex);
+            string result = AnalyzeLog(log);
 
-            // Вычисляем индекс начала следующего значения
-            int offset = GetOffset(log, dateEndIndex);
-
-            // Время
-            int timeStartIndex = offset;
-            int timeEndIndex = log.IndexOf(" ", offset);
-            string time = log.Substring(timeStartIndex, timeEndIndex - timeStartIndex);
-
-            offset = GetOffset(log, timeEndIndex);
-
-            // Уровень            
-            int levelStartIndex = offset;
-            int levelEndIndex = log.IndexOf(" ", offset);
-            string level = log.Substring(levelStartIndex, levelEndIndex - levelStartIndex);
-
-            offset = GetOffset(log, levelEndIndex);
-
-            // Сообщение   
-            int messageStartIndex = offset;
-            string message = log.Substring(messageStartIndex);
-
-            Console.WriteLine($"Дата: {date}, Время: {time}, Уровень: {(level + ",").PadRight(8)} Сообщение: {message}.");
+            Console.WriteLine(result);
         }
     }
 
