@@ -8,7 +8,7 @@
         Title="MainWindow" Height="195" Width="140">
     <StackPanel x:Name="Калькулятор" Orientation="Vertical">
         <StackPanel.Background>
-            <ImageBrush ImageSource="/numerologicheskij-goroskop-na-nedelju-s-16-po-22-janvarja-2023-goda-1.jpeg"/>
+            <ImageBrush ImageSource="/фон.jpeg"/>
         </StackPanel.Background>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="20"/>
         <Label x:Name="Модель_калькулятора" Content="Casio-526" HorizontalAlignment="Left" Margin="10,05,0,0" Width="49" Height="17" FontSize="7" Background="Transparent" FontFamily="Verdana" FontWeight="Bold"/>
