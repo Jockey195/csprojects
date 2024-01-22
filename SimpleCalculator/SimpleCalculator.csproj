@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="numerologicheskij-goroskop-na-nedelju-s-16-po-22-janvarja-2023-goda-1.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="numerologicheskij-goroskop-na-nedelju-s-16-po-22-janvarja-2023-goda-1.jpeg" />
+  </ItemGroup>
+
 </Project>
