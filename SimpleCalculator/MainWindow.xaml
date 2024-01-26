@@ -6,12 +6,13 @@
         xmlns:local="clr-namespace:SimpleCalculator"
         mc:Ignorable="d"
         Title="MainWindow" Height="195" Width="140">
-    <StackPanel x:Name="Калькулятор" Orientation="Vertical">
+    <StackPanel x:Name="Калькулятор" Orientation="Vertical" Margin="0,0,0,-8">
         <StackPanel.Background>
             <ImageBrush ImageSource="/фон.jpeg"/>
         </StackPanel.Background>
         <TextBox x:Name="txtOutput" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="20"/>
         <Label x:Name="Модель_калькулятора" Content="Casio-526" HorizontalAlignment="Left" Margin="10,05,0,0" Width="49" Height="17" FontSize="7" Background="Transparent" FontFamily="Verdana" FontWeight="Bold"/>
+        <Button x:Name="btnClear" Content="Очистить" Margin="70,0,0,0" Width="50" Height="15" FontSize="7" Background="Red" Click="btnClear_Click" FontWeight="DemiBold"/>
         <Grid Margin="10">
 
             <Grid.RowDefinitions>

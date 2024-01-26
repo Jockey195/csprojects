@@ -84,5 +84,10 @@ namespace SimpleCalculator
             _input = "";
             txtOutput.Text = result.ToString();
         }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            txtOutput.Clear();
+        }
     }
 }
