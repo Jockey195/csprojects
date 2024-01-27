@@ -11,13 +11,18 @@
         <StackPanel.Background>
             <ImageBrush ImageSource="/фон.jpeg"/>
         </StackPanel.Background>
-        <TextBox x:Name="txtOutput" TextWrapping="Wrap" Text="TextBox" IsReadOnly="True" VerticalAlignment="Top" Margin="4" FontSize="18"/>
         
-        <Label x:Name="Модель_калькулятора" Content="Casio-526" HorizontalAlignment="Left" Margin="10,05,0,0" Width="49"
-               Height="17" FontSize="7" Background="Transparent" FontFamily="Verdana" FontWeight="Bold"/>
+        <TextBox x:Name="txtOutput" TextWrapping="Wrap" Text="TextBox" IsReadOnly="True"
+                 VerticalAlignment="Top" Margin="4" FontSize="18"/>
         
-        <Button x:Name="btnClear" Content="Очистить"  Width="60" Height="30" FontSize="7" HorizontalAlignment="Right"
-                Background="Red" Click="btnClear_Click" FontWeight="DemiBold" Margin="0,0,13,0"/>
+        <Label x:Name="Модель_калькулятора" Content="Casio-526" HorizontalAlignment="Left"
+               Margin="10,05,0,0" Width="49" Height="17" FontSize="7" Background="Transparent"
+               FontFamily="Verdana" FontWeight="Bold"/>
+        
+        <Button x:Name="btnClear" Content="Очистить"  Width="60" Height="30" FontSize="7"
+                HorizontalAlignment="Right" Background="Red" Click="btnClear_Click"
+                FontWeight="DemiBold" Margin="0,0,13,0"/>
+        
         <Grid Margin="10">
 
             <Grid.RowDefinitions>
@@ -72,6 +77,7 @@
 
             <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" x:Name= "btnZero"
                     Content="0" Click="DigitButtons_Click" Margin="3"/>
+            
             <Button Grid.Row="4" Grid.Column="2" x:Name= "btnDot" Content="." 
                     Click="DigitButtons_Click" Style="{StaticResource btnDigitStyle}"/>
         </Grid>
