@@ -17,8 +17,6 @@ namespace SimpleCalculator
             txtOutput.Text = _input;
         }
 
-
-
         private void DigitButtons_Click(object sender, RoutedEventArgs e)
         {
             Button clickedButton = (Button)e.Source;
@@ -81,7 +79,7 @@ namespace SimpleCalculator
                 default:
                     break;
             }
-            _input = "";
+            _input = result.ToString();
             txtOutput.Text = result.ToString();
         }
 

@@ -4,6 +4,23 @@
              xmlns:local="clr-namespace:SimpleCalculator"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <Style x:Key="btnDigitStyle" TargetType="Button">
+                <Setter Property="Width" Value="60"/>
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Margin" Value="3"/>
+                <Setter Property="Padding" Value="1"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Margin" Value="3"/>
+                <Setter Property="Padding" Value="1"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
