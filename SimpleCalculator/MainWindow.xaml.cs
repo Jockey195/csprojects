@@ -23,6 +23,7 @@ namespace SimpleCalculator
             string item = clickedButton.Content.ToString();
             _input += item;
             txtOutput.Text = _input;
+            txtOutput.CaretIndex = txtOutput.Text.Length;
         }
 
         private void btnDivide_Click(object sender, RoutedEventArgs e)
