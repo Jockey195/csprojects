@@ -19,15 +19,33 @@ namespace SimpleCalculator
 
         private void DigitButtons_Click(object sender, RoutedEventArgs e)
         {
-            Button clickedButton = (Button)e.Source;
-            string item = clickedButton.Content.ToString();
-            _input += item;
-            txtOutput.Text = _input;
-            txtOutput.CaretIndex = txtOutput.Text.Length;
+            try
+            {
+                Button clickedButton = (Button)e.Source;
+                string item = clickedButton.Content.ToString();
+                _input += item;
+                txtOutput.Text = _input;
+                txtOutput.CaretIndex = txtOutput.Text.Length;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("проблема с вводом");
+            }
         }
 
         private void btnDivide_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                _operation = Operation.Division;
+                _value1 = Convert.ToDecimal(_input);
+                _input = "";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("проблема с вводом");
+                return;
+            }
             _operation = Operation.Division;
             _value1 = Convert.ToDecimal(_input);
             _input = "";
@@ -35,24 +53,54 @@ namespace SimpleCalculator
 
         private void btnMultiply_Click(object sender, RoutedEventArgs e)
         {
-            _operation = Operation.Multiplication;
-            _value1 = Convert.ToDecimal(_input);
-            _input = "";
+            try
+            {
+                _operation = Operation.Multiplication;
+                _value1 = Convert.ToDecimal(_input);
+                _input = "";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("проблема с вводом");
+            }
+            //_operation = Operation.Multiplication;
+            //_value1 = Convert.ToDecimal(_input);
+            //_input = "";
         }
 
         private void btnMinus_Click(object sender, RoutedEventArgs e)
         {
-            _operation = Operation.Subtraction;
-            _value1 = Convert.ToDecimal(_input);
-            _input = "";
+            try
+            {
+                _operation = Operation.Subtraction;
+                _value1 = Convert.ToDecimal(_input);
+                _input = "";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("проблема с вводом");
+            }
+            //_operation = Operation.Subtraction;
+            //_value1 = Convert.ToDecimal(_input);
+            //_input = "";
 
         }
 
         private void btnPlus_Click(object sender, RoutedEventArgs e)
         {
-            _operation = Operation.Addition;
-            _value1 = Convert.ToDecimal(_input);
-            _input = "";
+            try
+            {
+                _operation = Operation.Addition;
+                _value1 = Convert.ToDecimal(_input);
+                _input = "";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("проблема с вводом");
+            }
+            //_operation = Operation.Addition;
+            //_value1 = Convert.ToDecimal(_input);
+            //_input = "";
 
         }
 
@@ -82,6 +130,7 @@ namespace SimpleCalculator
             }
             _input = result.ToString();
             txtOutput.Text = result.ToString();
+            
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
