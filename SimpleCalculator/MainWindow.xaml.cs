@@ -29,7 +29,7 @@ namespace SimpleCalculator
             }
             catch (Exception)
             {
-                MessageBox.Show("проблема с вводом");
+                MessageBox.Show("Неверный ввод");
             }
         }
 
@@ -43,7 +43,7 @@ namespace SimpleCalculator
             }
             catch (Exception)
             {
-                MessageBox.Show("проблема с вводом");
+                MessageBox.Show("Неверный ввод");
                 return;
             }
             //_operation = Operation.Division;
@@ -61,7 +61,7 @@ namespace SimpleCalculator
             }
             catch (Exception)
             {
-                MessageBox.Show("проблема с вводом");
+                MessageBox.Show("Неверный ввод");
             }
             //_operation = Operation.Multiplication;
             //_value1 = Convert.ToDecimal(_input);
@@ -78,7 +78,7 @@ namespace SimpleCalculator
             }
             catch (Exception)
             {
-                MessageBox.Show("проблема с вводом");
+                MessageBox.Show("Неверный ввод");
             }
             //_operation = Operation.Subtraction;
             //_value1 = Convert.ToDecimal(_input);
@@ -96,7 +96,7 @@ namespace SimpleCalculator
             }
             catch (Exception)
             {
-                MessageBox.Show("проблема с вводом");
+                MessageBox.Show("Неверный ввод");
             }
             //_operation = Operation.Addition;
             //_value1 = Convert.ToDecimal(_input);
@@ -107,30 +107,41 @@ namespace SimpleCalculator
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {
             decimal result = 0;
-            switch (_operation)
-            {
-                case Operation.Addition:
-                    _value2 = Convert.ToDecimal(_input);
-                    result = _value1 + _value2;
-                    break;
-                case Operation.Subtraction:
-                    _value2 = Convert.ToDecimal(_input);
-                    result = _value1 - _value2;
-                    break;
-                case Operation.Division:
-                    _value2 = Convert.ToDecimal(_input);
-                    result = _value1 / _value2;
-                    break;
-                case Operation.Multiplication:
-                    _value2 = Convert.ToDecimal(_input);
-                    result = _value1 * _value2;
-                    break;
-                default:
-                    break;
-            }
-            _input = result.ToString();
-            txtOutput.Text = result.ToString();
-            
+            //try
+            //{
+                switch (_operation)
+                {
+                    case Operation.Addition:
+                        _value2 = Convert.ToDecimal(_input);
+                        result = _value1 + _value2;
+                        break;
+                    case Operation.Subtraction:
+                        _value2 = Convert.ToDecimal(_input);
+                        result = _value1 - _value2;
+                        break;
+                    case Operation.Division:
+                        _value2 = Convert.ToDecimal(_input);
+                        if (_value2 == 0)
+                        {
+                            MessageBox.Show("На нуль делить нельзя");
+                            return;
+                        }
+                        result = _value1 / _value2;
+                        break;
+                    case Operation.Multiplication:
+                        _value2 = Convert.ToDecimal(_input);
+                        result = _value1 * _value2;
+                        break;
+                    default:
+                        break;
+                }
+                _input = result.ToString();
+                txtOutput.Text = result.ToString();
+            //}
+            //catch (Exception)
+            //{
+                //MessageBox.Show("Введите значения для операции");
+            //}
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
