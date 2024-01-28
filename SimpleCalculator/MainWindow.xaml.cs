@@ -46,9 +46,9 @@ namespace SimpleCalculator
                 MessageBox.Show("проблема с вводом");
                 return;
             }
-            _operation = Operation.Division;
-            _value1 = Convert.ToDecimal(_input);
-            _input = "";
+            //_operation = Operation.Division;
+            //_value1 = Convert.ToDecimal(_input);
+            //_input = "";
         }
 
         private void btnMultiply_Click(object sender, RoutedEventArgs e)
@@ -136,6 +136,12 @@ namespace SimpleCalculator
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             txtOutput.Clear();
+            _input = "";
+        }
+
+        private void menu_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

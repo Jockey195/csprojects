@@ -12,9 +12,11 @@
             <ImageBrush ImageSource="/фон.jpeg"/>
         </StackPanel.Background>
         
-        <TextBox x:Name="txtOutput" TextWrapping="Wrap" Text="TextBox" IsReadOnly="True"
-                 VerticalAlignment="Top" Margin="4" FontSize="18"/>
+        <Menu x:Name="menu" Height="15" MenuItem.Click="menu_Click" Background="Coral"/>
         
+        <TextBox x:Name="txtOutput" TextWrapping="Wrap" Text="TextBox" IsReadOnly="True"
+                 VerticalAlignment="Top" Margin="4,20,4,0" FontSize="18"/>
+
         <Label x:Name="Модель_калькулятора" Content="Casio-526" HorizontalAlignment="Left"
                Margin="10,05,0,0" Width="49" Height="17" FontSize="7" Background="Transparent"
                FontFamily="Verdana" FontWeight="Bold"/>
@@ -78,7 +80,7 @@
             <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" x:Name= "btnZero"
                     Content="0" Click="DigitButtons_Click" Margin="3"/>
             
-            <Button Grid.Row="4" Grid.Column="2" x:Name= "btnDot" Content="." 
+            <Button Grid.Row="4" Grid.Column="2" x:Name= "btnDot" Content="," 
                     Click="DigitButtons_Click" Style="{StaticResource btnDigitStyle}"/>
         </Grid>
     </StackPanel>
