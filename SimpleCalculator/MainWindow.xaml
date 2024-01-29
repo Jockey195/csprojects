@@ -11,9 +11,15 @@
         <StackPanel.Background>
             <ImageBrush ImageSource="/фон.jpeg"/>
         </StackPanel.Background>
-        
-        <Menu x:Name="menu" Height="15" MenuItem.Click="menu_Click" Background="Coral"/>
-        
+
+        <Menu Height="20" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="О программе" ></MenuItem>
+                <MenuItem Header="Закрыть" ></MenuItem>
+            </MenuItem>
+            
+        </Menu>
+
         <TextBox x:Name="txtOutput" TextWrapping="Wrap" Text="TextBox" IsReadOnly="True"
                  VerticalAlignment="Top" Margin="4,20,4,0" FontSize="18"/>
 
