@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Globalization;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace SimpleCalculator
@@ -15,6 +16,13 @@ namespace SimpleCalculator
             InitializeComponent();
             DataContext = this;
             txtOutput.Text = _input;
+
+            // Создаем новые региональные настройки где разделителем десятичной части служит ","
+            var peremennayaCultureInfo = (CultureInfo)CultureInfo.InvariantCulture.Clone();
+            peremennayaCultureInfo.NumberFormat.NumberDecimalSeparator = ",";
+
+            // Назначаем созданные настройки, выполняемому потоку (текущей программе)
+            Thread.CurrentThread.CurrentCulture = peremennayaCultureInfo;
         }
 
         private void DigitButtons_Click(object sender, RoutedEventArgs e)
@@ -150,8 +158,15 @@ namespace SimpleCalculator
             _input = "";
         }
 
-        private void menu_Click(object sender, RoutedEventArgs e)
+        private void mnuExit_Click(object sender, RoutedEventArgs e)
         {
+            Close();
+        }
+
+        private void mnuAbout_Click(object sender, RoutedEventArgs e)
+        {
+            AboutWindow aboutWindow = new AboutWindow();
+            aboutWindow.Show();
 
         }
     }

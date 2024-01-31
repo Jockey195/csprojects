@@ -14,8 +14,8 @@
 
         <Menu Height="20" VerticalAlignment="Top">
             <MenuItem Header="File">
-                <MenuItem Header="О программе" ></MenuItem>
-                <MenuItem Header="Закрыть" ></MenuItem>
+                <MenuItem x:Name="mnuAbout" Header="О программе" Click="mnuAbout_Click" ></MenuItem>
+                <MenuItem x:Name="mnuExit" Header="Закрыть" Click="mnuExit_Click" ></MenuItem>
             </MenuItem>
             
         </Menu>
