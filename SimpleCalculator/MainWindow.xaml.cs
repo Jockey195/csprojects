@@ -30,7 +30,7 @@ namespace SimpleCalculator
             try
             {
                 Button clickedButton = (Button)e.Source;
-                string item = clickedButton.Content.ToString();
+                string? item = clickedButton.Content.ToString();
                 _input += item;
                 txtOutput.Text = _input;
                 txtOutput.CaretIndex = txtOutput.Text.Length;
@@ -54,9 +54,6 @@ namespace SimpleCalculator
                 MessageBox.Show("Неверный ввод");
                 return;
             }
-            //_operation = Operation.Division;
-            //_value1 = Convert.ToDecimal(_input);
-            //_input = "";
         }
 
         private void btnMultiply_Click(object sender, RoutedEventArgs e)
@@ -71,9 +68,6 @@ namespace SimpleCalculator
             {
                 MessageBox.Show("Неверный ввод");
             }
-            //_operation = Operation.Multiplication;
-            //_value1 = Convert.ToDecimal(_input);
-            //_input = "";
         }
 
         private void btnMinus_Click(object sender, RoutedEventArgs e)
@@ -88,10 +82,6 @@ namespace SimpleCalculator
             {
                 MessageBox.Show("Неверный ввод");
             }
-            //_operation = Operation.Subtraction;
-            //_value1 = Convert.ToDecimal(_input);
-            //_input = "";
-
         }
 
         private void btnPlus_Click(object sender, RoutedEventArgs e)
@@ -106,10 +96,6 @@ namespace SimpleCalculator
             {
                 MessageBox.Show("Неверный ввод");
             }
-            //_operation = Operation.Addition;
-            //_value1 = Convert.ToDecimal(_input);
-            //_input = "";
-
         }
 
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
