@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SimpleCalculator"
         mc:Ignorable="d"
         Title="MainWindow"
-        SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+        SizeToContent="WidthAndHeight" ResizeMode="NoResize" KeyUp="Window_KeyUp">
     <StackPanel x:Name="Калькулятор" Orientation="Vertical">
         <StackPanel.Background>
             <ImageBrush ImageSource="/фон.jpeg"/>
