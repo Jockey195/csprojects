@@ -12,15 +12,64 @@
 
 <h1>Calculator</h1>
 
-<input type="text" placeholder="Нажмите что нить плиз" value="@clickedNumber"/>
+<input class=" border-4" type="text" placeholder="Нажмите что нить плиз" value="@clickedNumber"/>
 
 <table class="mt-2">
     <tr>
         <td>
+            <button class="btn btn-info" @onclick="(() => Clicked('/'))">/</button>
+        </td>
+        <td>
+            <button class="btn btn-info" @onclick="(() => Clicked('*'))">*</button>
+        </td>
+        <td>
+            <button class="btn btn-info" @onclick="(() => Clicked('-'))">-</button>
+        </td>
+        <td>
+            <button class="btn btn-info" @onclick="(() => Clicked('+'))">+</button>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <button class="btn btn-info" @onclick="(() => Clicked(7))">7</button>
+        </td>
+        <td>
+            <button class="btn btn-info" @onclick="(() => Clicked(8))">8</button>
+        </td>
+        <td>
+            <button class="btn btn-info" @onclick="(() => Clicked(9))">9</button>
+        </td>
+        <td>
+            <button class="btn btn-info" @onclick="(() => Clicked(0))">0</button>
+        </td>
+        </tr>
+
+        <td>
+            <button class="btn btn-info" @onclick="(() => Clicked(4))">4</button>
+        </td>
+        <td>
+            <button class="btn btn-info" @onclick="(() => Clicked(5))">5</button>
+        </td>
+        <td>
+            <button class="btn btn-info" @onclick="(() => Clicked(6))">6</button>
+        </td>
+        <td>
+        <button class="btn btn-info" @onclick="(() => Clicked('='))">=</button>
+        </td>
+
+        <tr>
+        <td>
             <button class="btn btn-info" @onclick="(() => Clicked(1))">1</button>
         </td>
         <td>
-            <button @onclick="(() => Clicked(2))">2</button>
+            <button class="btn btn-info" @onclick="(() => Clicked(2))">2</button>
+        </td>
+        <td>
+            <button class="btn btn-info" @onclick="(() => Clicked(3))">3</button>
+        </td>
+        <td>
+            <button class="btn btn-info" @onclick="(() => Clicked('.'))">.</button>
         </td>
     </tr>
 </table>
