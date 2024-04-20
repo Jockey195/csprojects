@@ -1,7 +1,26 @@
 ﻿@page "/"
+@rendermode InteractiveServer
 
-<PageTitle>Home</PageTitle>
+@code {
+    private int clickedNumber = 0;
 
-<h1>Hello, world!</h1>
+    public void Clicked(int number)
+    {
+        clickedNumber = number;
+    }
+}
 
-Welcome to your new app.
+<h1>Calculator</h1>
+
+<input type="text" placeholder="Нажмите что нить плиз" value="@clickedNumber"/>
+
+<table class="mt-2">
+    <tr>
+        <td>
+            <button class="btn btn-info" @onclick="(() => Clicked(1))">1</button>
+        </td>
+        <td>
+            <button @onclick="(() => Clicked(2))">2</button>
+        </td>
+    </tr>
+</table>
